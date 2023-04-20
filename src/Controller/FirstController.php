@@ -9,6 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class FirstController extends AbstractController
 {
+
+    /*
+    #[Route('{maVar}', name: 'test.order.route')]
+    public function testOrderRoute($maVar): Response
+    {
+        return new Response("<html><body>$maVar</body></html>");
+    }*/
+
     #[Route('/first', name: 'first')]
     public function index(): Response
     {
@@ -36,5 +44,16 @@ class FirstController extends AbstractController
         //le post est dans le request
         return $this->render('first/hello.html.twig', ['name' => $name, 'firstname' => $firstname]);
         //return new Response("<head><title>Première page</title></head><body><p>Bou</p></body>");
+    }
+
+    #[Route('multi/{entier1<\d+>}/{entier2}',
+        name: 'multiplication',
+        //utilise le regex
+        requirements: ['entier2' => '\d+']
+    )]
+    public function multiplication($entier1, $entier2): Response
+    {
+        $resultat = $entier1 * $entier2;
+        return new Response("<h1>$resultat</h1>");
     }
 }
