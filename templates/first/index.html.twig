@@ -1,17 +1,19 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{firstname}} {{name}}</title>
-</head>
-<body>
+{% extends 'template.html.twig' %}
+
+{% block blockBody %}
 <div>
     <p>:wave:</p>
     <h1>{{ firstname }} {{ name }}</h1>
     <img src="{{ asset('assets/images/') ~ path | defaultImage}}" alt="image">
+    <br>
+    Je veux aller sur cet url absolue <a href="{{ url('first') }}" >ici</a>
 </div>
-</body>
-</html>
+{% endblock %}
+
+{% block title %}
+    {{ firstname }} {{ name }}
+{% endblock %}
+
+{% block pageTitle %}
+    Coucou
+{% endblock %}

@@ -51,7 +51,7 @@ class FirstController extends AbstractController
         //die and dumb
         //le get est dans le query
         //le post est dans le request
-        return $this->render('first/hello.html.twig', ['name' => $name, 'firstname' => $firstname]);
+        return $this->render('first/hello.html.twig', ['name' => $name, 'firstname' => $firstname, 'path' => '    ']);
         //return new Response("<head><title>Première page</title></head><body><p>Bou</p></body>");
     }
 
