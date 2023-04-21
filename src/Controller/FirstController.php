@@ -23,6 +23,7 @@ class FirstController extends AbstractController
         return $this->render('first/index.html.twig', [
             'firstname' => "Pika",
             'name' => "UwU",
+            'path' => '   ',
         ]);
         //return new Response("<head><title>Première page</title></head><body><p>Bou</p></body>");
     }
