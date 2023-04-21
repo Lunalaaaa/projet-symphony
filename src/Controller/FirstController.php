@@ -10,6 +10,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class FirstController extends AbstractController
 {
 
+    /**
+     * @Route("/template", name="template")
+     *
+     */
+    public function template(){
+        return $this->render('template.html.twig');
+    }
+
     /*
     #[Route('{maVar}', name: 'test.order.route')]
     public function testOrderRoute($maVar): Response
@@ -57,4 +65,6 @@ class FirstController extends AbstractController
         $resultat = $entier1 * $entier2;
         return new Response("<h1>$resultat</h1>");
     }
+
+
 }
